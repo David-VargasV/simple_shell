@@ -1,17 +1,10 @@
 #include "main.h"
 
 /**
-*
+* This is for interactive and non-interactive shell
 *
 */
 
 int main()
 {
-  int i=0;
-  while(1)
-    {
-      i++;
-      printf("%d", i);
-    }
-  return (0);
 }

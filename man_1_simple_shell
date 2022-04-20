@@ -1,1 +1,48 @@
-temporal
+# NAME
+Simple Shell
+
+# SYNOPSIS
+**Simple Shell** [*option*]
+
+# DESCRIPTION
+**Simple Shell** A Unix shell is a command-line interpreter or shell that provides a command line user interface for Unix-like operating systems.
+
+# OPTIONS
+**./shell** is the file that executes the shell
+
+# EXAMPLES
+**ls**
+: run the ls command and list the available files
+
+# EXIT VALUES
+****
+
+# SEE ALSO
+https://en.wikipedia.org/wiki/Unix_shell
+
+# BUGS
+****
+
+# CORE FILES
+**main.h**
+
+**prompt.c**
+
+**strings.c**
+
+**tokenizer.c**
+
+**getenv.c**
+
+**README.md**
+
+**man_1_simple_shell**
+
+# AUTHORS
+written by
+Leonardo Berrío Rendon
+Jhoan David Vargas Velandia 
+
+# COPYRIGHT
+Copyright © 2022 Holberton Inc, All rights reserved
+
