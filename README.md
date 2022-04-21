@@ -59,7 +59,6 @@ But also in non-interactive mode:
 | [AUTHORS](https://github.com/David-VargasV/simple_shell/blob/master/AUTHORS) | Authors if this project |
 | [_getenv.c](https://github.com/David-VargasV/simple_shell/blob/master/_getenv.c) | Description |
 | [free_ptr.c](https://github.com/David-VargasV/simple_shell/blob/master/free_ptr.c) | Description|
-| [main.c](https://github.com/David-VargasV/simple_shell/blob/master/main.c) | Description |
 | [main.h](https://github.com/David-VargasV/simple_shell/blob/master/main.h) | Description |
 | [man_1_simple_shell](https://github.com/David-VargasV/simple_shell/blob/master/man_1_simple_shell) | Description |
 | [prompt.c](https://github.com/David-VargasV/simple_shell/blob/master/prompt.c) | Description |
