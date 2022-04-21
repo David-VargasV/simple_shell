@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * sigintHandler - entry point
- *
+ * @sig: Variable
  * Return: void (Success)
  */
 void sigintHandler(int sig)
@@ -16,7 +16,7 @@ void sigintHandler(int sig)
  * Return: 0 (Success)
  */
 
-int main()
+int main(void)
 {
 	int n_char = 0;
 	char *line = NULL, *delim = " \n\t", *path = NULL;
@@ -24,12 +24,10 @@ int main()
 	char **l_token = NULL;
 
 	signal(SIGINT, sigintHandler);
-
 	while (1)
 	{
 		printf("$ ");
 		n_char = getline(&line, &size, stdin);
-
 		if (n_char == EOF)
 		{
 			free(line);
@@ -38,13 +36,13 @@ int main()
 
 		l_token = malloc(sizeof(char *) * (n_char + 1));
 		l_token = tokenizer(line, delim, n_char);
-		if(!l_token)
+		if (!l_token)
 		{
 			free(line);
 		}
 
 		path = _getenv(l_token[0]);
-		if(!path)
+		if (!path)
 		{
 			free(path);
 			free_ptr(l_token);
@@ -59,5 +57,5 @@ int main()
 		}
 		free(l_token);
 	}
-	return(0);
+	return (0);
 }

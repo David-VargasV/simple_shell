@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
- * _strcmp - compare two strings
+ * _strcmp - function to compare strings
  * @s1: string 1
  * @s2: string 2
- * Return: Value or 0
+ * Return: 0 (success)
  */
-
 int _strcmp(char *s1, char *s2)
 {
 	int i;
@@ -22,7 +21,7 @@ int _strcmp(char *s1, char *s2)
 
 /**
  * _strlen - returns the length of the string
- * @*s: pointer string
+ * @s: pointer string
  * Return: Value
  */
 
@@ -38,8 +37,8 @@ int _strlen(char *s)
 
 /**
  * _strcpy - copy string
- * @*dest: var
- * @*src: pointer
+ * @dest: var
+ * @src: pointer
  * Return: Value
  */
 
@@ -56,8 +55,8 @@ char *_strcpy(char *dest, char *src)
 
 /**
  * _strcat - copy string string2 into string1
- * @*dest: var
- * @*src: var
+ * @dest: var
+ * @src: var
  * Return: Value
  */
 
@@ -82,8 +81,8 @@ char *_strcat(char *dest, char *src)
 
 /**
  * _strncmp - perform an ordinal comparison
- * @*s1: string 1
- * @*s2: string 2
+ * @s1: string 1
+ * @s2: string 2
  * @n: size
  * Return: Value or NULL
  */

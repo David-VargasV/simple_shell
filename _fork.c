@@ -11,9 +11,9 @@ int _forki(char **l_token, char *path)
 	pid_t pidC = 0;
 
 	pidC = fork();
-	if(pidC < 0)
+	if (pidC < 0)
 	{
-		if(path)
+		if (path)
 		{
 			free(path);
 		}
@@ -27,9 +27,9 @@ int _forki(char **l_token, char *path)
 	}
 	else if (pidC == 0)
 	{
-		if(execve(path, l_token, environ) == -1)
+		if (execve(path, l_token, environ) == -1)
 		{
-			if(path)
+			if (path)
 			{
 				free(path);
 			}

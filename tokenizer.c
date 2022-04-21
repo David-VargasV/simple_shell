@@ -4,6 +4,7 @@
  * tokenizer - breaks the line in segments
  * @line: line set by stdin
  * @delim: chars to delim with
+ * @len: lenght of line
  * Return: tokens
  */
 
@@ -15,7 +16,7 @@ char **tokenizer(char *line, char *delim, int len)
 
 	len = _strlen(line);
 	ltok_1 = strtok(line, delim);
-	if(ltok_1 == NULL)
+	if (ltok_1 == NULL)
 	{
 		return (NULL);
 	}
