@@ -1,26 +1,44 @@
 #include "main.h"
+/**
+ * sigintHandler - entry point
+ *
+ * Return: void (Success)
+ */
+void sigintHandler(int sig)
+{
+	UNUSED(sig);
+	write(STDERR_FILENO, "\n$ ", 4);
+}
 
 /**
+ * main - entry point
  *
- * 
- *
+ * Return: 0 (Success)
  */
 
 int main()
 {
-	int len_token = 0;
-    char *line = NULL, *d_line = NULL, *delim = " \n\t", *path = NULL;
-    size_t size = 0;
-    char **l_token = NULL;
+	int n_char = 0;
+	char *line = NULL, *d_line = NULL, *delim = " \n\t", *path = NULL;
+	size_t size = 0;
+	char **l_token = NULL;
+
+	signal(SIGINT, sigintHandler);
 
 	while (1)
-    {
+	{
 		printf("$ ");
-		getline(&line, &size, stdin);
+		n_char = getline(&line, &size, stdin);
+
+		if(n_char == EOF)
+		{
+			free(line);
+			return(0);
+		}
+
 		d_line = _strdup(line);
 
-		len_token = _strlen(d_line);
-		l_token = malloc(sizeof(char *) * (len_token + 1));
+		l_token = malloc(sizeof(char *) * (n_char + 1));
 		l_token = tokenizer(d_line, delim);
 
 		path = _getenv(l_token[0]);
@@ -30,6 +48,6 @@ int main()
 			free(l_token);
 			printf("error");
 		}
-    }
-    exit(EXIT_SUCCESS);
+	}
+	exit(EXIT_SUCCESS);
 }

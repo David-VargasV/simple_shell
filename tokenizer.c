@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
-* tokenizer -
-*
-* Return:
+* tokenizer - breaks the line in segments
+* @line: line set by stdin
+* @delim: chars to delim with
+* Return: tokens
 */
 
 char **tokenizer(char *line, char *delim)
@@ -19,7 +20,7 @@ char **tokenizer(char *line, char *delim)
 	if (tokens == NULL)
 	{
 		free(tokens);
-		return (NULL);
+		return(NULL);
 	}
 
 	while (j < len)

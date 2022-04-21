@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#define UNUSED(x) (void)(x)
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,6 +15,8 @@
 #include <signal.h>
 #include <stddef.h>
 #include <stdbool.h>
+
+extern char **environ;
 
 int main(void);
 int _strcmp(char *s1, char *s2);

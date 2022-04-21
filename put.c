@@ -8,8 +8,8 @@
 
 void _puts(char *str)
 {
-	int x;
-	int con;
+	int x = 0;
+	int con = 0;
 
 	con = _strlen(str);
 	for (x = 0; x < con; x++)
@@ -25,22 +25,5 @@ void _puts(char *str)
 
 int _putchar(char c)
 {
-		return (write(1, &c, 1));
-}
-
-/**
- * _count - counter
- * @ptr: pointer to count
- * Return: i
- */
-
-int _count(char *ptr)
-{
-	int i = 0;
-
-	while(ptr[i])
-	{
-		i++;
-	}
-	return(i);
+	return (write(1, &c, 1));
 }
