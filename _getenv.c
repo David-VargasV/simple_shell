@@ -31,7 +31,7 @@ char *_getenv(char *token)
 	
 	p_len = _strlen(path);
 	t_path = malloc(sizeof(char *) * (p_len + 1));
-	t_path = tokenizer(path, "=:");
+	t_path = tokenizer(path, "=:", p_len);
 	
 	while(t_path[j])
 	{
@@ -40,12 +40,13 @@ char *_getenv(char *token)
 		new_path = _strcat(new_path, token);
 		if (access(new_path, F_OK) == 0)
 		{
+			free(path);
 			free(t_path);
-			return (new_path);
+			return(new_path);
 		}
 		j++;
 	}
-
+	free(path);
 	free(t_path);
 	return (NULL);
 }

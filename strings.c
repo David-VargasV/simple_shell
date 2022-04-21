@@ -10,16 +10,15 @@
 int _strcmp(char *s1, char *s2)
 {
 	int i;
-	
+
 	for (i = 0; (s1[i] != '\0') && (s2[i] != '\0'); i++)
 	{
 		if (s1[i] != s2[i])
-			
+
 			return (s1[i] - s2[i]);
 	}
 	return (0);
 }
-
 
 /**
  * _strlen - returns the length of the string
@@ -30,13 +29,12 @@ int _strcmp(char *s1, char *s2)
 int _strlen(char *s)
 {
 	int str = 0;
-	
+
 	while (*s++)
 		str++;
-	
+
 	return (str);
 }
-
 
 /**
  * _strcpy - copy string
@@ -55,7 +53,6 @@ char *_strcpy(char *dest, char *src)
 	dest[i] = '\0';
 	return (dest);
 }
-
 
 /**
  * _strcat - copy string string2 into string1
@@ -82,7 +79,6 @@ char *_strcat(char *dest, char *src)
 	dest[dlen + i] = '\0';
 	return (dest);
 }
-
 
 /**
  * _strncmp - perform an ordinal comparison

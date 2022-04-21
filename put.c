@@ -16,7 +16,6 @@ void _puts(char *str)
 		_putchar(str[x]);
 }
 
-
 /**
  * _putchar - putchar
  * @c: character

@@ -19,7 +19,7 @@ void sigintHandler(int sig)
 int main()
 {
 	int n_char = 0;
-	char *line = NULL, *d_line = NULL, *delim = " \n\t", *path = NULL;
+	char *line = NULL, *delim = " \n\t", *path = NULL;
 	size_t size = 0;
 	char **l_token = NULL;
 
@@ -30,24 +30,34 @@ int main()
 		printf("$ ");
 		n_char = getline(&line, &size, stdin);
 
-		if(n_char == EOF)
+		if (n_char == EOF)
 		{
 			free(line);
-			return(0);
+			return (0);
 		}
-
-		d_line = _strdup(line);
 
 		l_token = malloc(sizeof(char *) * (n_char + 1));
-		l_token = tokenizer(d_line, delim);
+		l_token = tokenizer(line, delim, n_char);
+		if(!l_token)
+		{
+			free(line);
+		}
 
 		path = _getenv(l_token[0]);
+		if(!path)
+		{
+			free(path);
+			free_ptr(l_token);
+		}
 
-		if(_forki(line, l_token, path) == -1)
+		if (_forki(l_token, path) == -1)
 		{
 			free(l_token);
+			free(path);
+			free(line);
 			printf("error");
 		}
+		free(l_token);
 	}
-	exit(EXIT_SUCCESS);
+	return(0);
 }
