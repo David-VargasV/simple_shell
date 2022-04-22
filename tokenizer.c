@@ -4,7 +4,6 @@
  * tokenizer - breaks the line in segments
  * @line: line set by stdin
  * @delim: chars to delim with
- * @len: lenght of line
  * Return: tokens
  */
 

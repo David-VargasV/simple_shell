@@ -30,7 +30,7 @@ int main(void)
 		n_char = getline(&line, &size, stdin);
 		if (n_char == EOF)
 			return (0);
-		
+
 		len_tok = t_count(line, delim);
 		l_token = malloc(sizeof(char *) * (len_tok + 1));
 		l_token = tokenizer(line, delim);

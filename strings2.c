@@ -34,7 +34,12 @@ char *_strdup(char *str)
 	}
 	return (new_s);
 }
-
+/**
+ * t_count - token counter
+ * @ptr: ptr to check
+ * @delim: delimiter
+ * Return: lenght
+ */
 int t_count(char *ptr, char *delim)
 {
 	int i = 0, j = 0, len = 0;
@@ -42,7 +47,7 @@ int t_count(char *ptr, char *delim)
 	while (ptr[i])
 	{
 		j = 0;
-		while(ptr[j])
+		while (ptr[j])
 		{
 			if (ptr[i] == delim[j])
 			{
