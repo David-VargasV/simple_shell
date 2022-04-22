@@ -47,8 +47,7 @@ int main(void)
 			free(path);
 			free_ptr(l_token);
 		}
-
-		if (_forki(l_token, path) == -1)
+		else if (_forki(l_token, path) == -1)
 		{
 			free(l_token);
 			free(path);
