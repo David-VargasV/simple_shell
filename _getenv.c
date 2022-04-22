@@ -10,10 +10,6 @@ char *_getenv(char *token)
 	char **t_path = NULL;
 	char *path = NULL, *new_path = NULL;
 
-	if (access(token, F_OK) == 0)
-	{
-		return (token);
-	}
 	while (__environ[i])
 	{
 		if (_strncmp(__environ[i], "PATH", 4))
@@ -24,11 +20,10 @@ char *_getenv(char *token)
 		i++;
 	}
 	if (path == NULL)
-	{
 		return (NULL);
-	}
+
 	p_len = _strlen(path);
-	t_path = malloc(sizeof(char *) * (p_len + 1));
+	t_path = malloc(sizeof(char *) * (p_len));
 	t_path = tokenizer(path, "=:", p_len);
 	while (t_path[j])
 	{

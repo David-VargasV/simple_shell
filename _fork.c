@@ -24,18 +24,17 @@ int _forki(char **l_token, char *path)
 	if (pidC > 0)
 	{
 		wait(&status);
+		free(path);
+		free(l_token);
 	}
 	else if (pidC == 0)
 	{
 		if (execve(path, l_token, environ) == -1)
 		{
 			if (path)
-			{
 				free(path);
-			}
+
 			free_ptr(l_token);
-			perror("No path");
-			exit(0);
 		}
 	}
 	return (0);
