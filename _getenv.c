@@ -8,13 +8,13 @@ char *_getenv(char *token)
 {
 	int i = 0, p_len = 0, j = 1;
 	char **t_path = NULL;
-	char *path = NULL, *new_path = NULL;
+	char *path = NULL, *new_path = NULL, *delim = "=:";
 
-	while (__environ[i])
+	while (environ[i])
 	{
-		if (_strncmp(__environ[i], "PATH", 4))
+		if (_strncmp(environ[i], "PATH", 4) == 0)
 		{
-			path = _strdup(__environ[i]);
+			path = _strdup(environ[i]);
 			break;
 		}
 		i++;
@@ -22,9 +22,9 @@ char *_getenv(char *token)
 	if (path == NULL)
 		return (NULL);
 
-	p_len = _strlen(path);
-	t_path = malloc(sizeof(char *) * (p_len));
-	t_path = tokenizer(path, "=:", p_len);
+	p_len = t_count(path, delim);
+	t_path = malloc(sizeof(char *) * (p_len + 1));
+	t_path = tokenizer(path, delim);
 	while (t_path[j])
 	{
 		new_path = _strdup(t_path[j]);

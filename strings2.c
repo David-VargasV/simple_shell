@@ -34,3 +34,24 @@ char *_strdup(char *str)
 	}
 	return (new_s);
 }
+
+int t_count(char *ptr, char *delim)
+{
+	int i = 0, j = 0, len = 0;
+
+	while (ptr[i])
+	{
+		j = 0;
+		while(ptr[j])
+		{
+			if (ptr[i] == delim[j])
+			{
+				len++;
+				break;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (len);
+}

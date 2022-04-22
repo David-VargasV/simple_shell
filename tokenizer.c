@@ -8,13 +8,12 @@
  * Return: tokens
  */
 
-char **tokenizer(char *line, char *delim, int len)
+char **tokenizer(char *line, char *delim)
 {
-	int j = 0;
+	int j = 0, len = t_count(line, delim);
 	char *ltok_1 = NULL;
 	char **tokens = NULL;
 
-	len = _strlen(line);
 	ltok_1 = strtok(line, delim);
 	if (ltok_1 == NULL)
 	{

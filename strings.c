@@ -87,7 +87,7 @@ char *_strcat(char *dest, char *src)
  * Return: Value or NULL
  */
 
-char *_strncmp(char *s1, char *s2, size_t n)
+int _strncmp(char *s1, char *s2, size_t n)
 {
 	while (n && *s1 && (*s1 == *s2))
 	{
@@ -97,10 +97,10 @@ char *_strncmp(char *s1, char *s2, size_t n)
 	}
 	if (n == 0)
 	{
-		return (s1);
+		return (0);
 	}
 	else
 	{
-		return (NULL);
+		return (-1);
 	}
 }

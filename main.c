@@ -18,7 +18,7 @@ void sigintHandler(int sig)
 
 int main(void)
 {
-	int n_char = 0;
+	int n_char = 0, len_tok = 0;
 	char *line = NULL, *delim = " \n\t", *path = NULL;
 	size_t size = 0;
 	char **l_token = NULL;
@@ -30,9 +30,10 @@ int main(void)
 		n_char = getline(&line, &size, stdin);
 		if (n_char == EOF)
 			return (0);
-
-		l_token = malloc(sizeof(char *) * (n_char + 1));
-		l_token = tokenizer(line, delim, n_char);
+		
+		len_tok = t_count(line, delim);
+		l_token = malloc(sizeof(char *) * (len_tok + 1));
+		l_token = tokenizer(line, delim);
 		if (l_token == NULL)
 		{	free(line);
 			perror("./hsh");
@@ -55,7 +56,6 @@ int main(void)
 			free(line);
 			perror("./hsh");
 		}
-		free_ptr(l_token);
 	}
 	return (0);
 }
