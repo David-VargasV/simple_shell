@@ -19,17 +19,12 @@
 extern char **environ;
 
 int main(void);
-int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
-char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 int _strncmp(char *s1, char *s2, size_t n);
 char *_strdup(char *str);
-void _puts(char *str);
-int _putchar(char c);
 char **tokenizer(char *line, char *delim);
 char *_getenv(char *token);
-char **_env(char **l_token);
 void free_ptr(char **ptr);
 int t_count(char *ptr, char *delim);
 int _forki(char **l_token, char *path);
