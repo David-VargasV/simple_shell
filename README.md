@@ -57,17 +57,14 @@ But also in non-interactive mode:
 | File | Description |
 | ----- | ----- |
 | [AUTHORS](https://github.com/David-VargasV/simple_shell/blob/master/AUTHORS) | Authors if this project |
-| [_getenv.c](https://github.com/David-VargasV/simple_shell/blob/master/_getenv.c) | Description |
-| [main.c](https://github.com/David-VargasV/simple_shell/blob/master/main.c) | Description |
-| [free_ptr.c](https://github.com/David-VargasV/simple_shell/blob/master/free_ptr.c) | Description|
-| [main.h](https://github.com/David-VargasV/simple_shell/blob/master/main.h) | Description |
-| [man_1_simple_shell](https://github.com/David-VargasV/simple_shell/blob/master/man_1_simple_shell) | Description |
-| [prompt.c](https://github.com/David-VargasV/simple_shell/blob/master/prompt.c) | Description |
-| [put.c](https://github.com/David-VargasV/simple_shell/blob/master/put.c) | Description |
-| [strings.c](https://github.com/David-VargasV/simple_shell/blob/master/strings.c) | Description |
-| [strings2.c](https://github.com/David-VargasV/simple_shell/blob/master/strings2.c) | Description |
-| [tokenizer.c](https://github.com/David-VargasV/simple_shell/blob/master/tokenizer.c) | Description |
-| [_fork.c](https://github.com/David-VargasV/simple_shell/blob/master/_fork.c) | Description |
+| [_getenv.c](https://github.com/David-VargasV/simple_shell/blob/master/_getenv.c) | Find the path |
+| [main.c](https://github.com/David-VargasV/simple_shell/blob/master/main.c) | Prompt |
+| [free_ptr.c](https://github.com/David-VargasV/simple_shell/blob/master/free_ptr.c) | Free double pointers |
+| [main.h](https://github.com/David-VargasV/simple_shell/blob/master/main.h) | Header file |
+| [man_1_simple_shell](https://github.com/David-VargasV/simple_shell/blob/master/man_1_simple_shell) | Manual |
+| [strings.c](https://github.com/David-VargasV/simple_shell/blob/master/strings.c) | String functions |
+| [tokenizer.c](https://github.com/David-VargasV/simple_shell/blob/master/tokenizer.c) | Break lines into tokens |
+| [_fork.c](https://github.com/David-VargasV/simple_shell/blob/master/_fork.c) | Fork the process |
 
 ***
 
