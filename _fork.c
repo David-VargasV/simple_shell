@@ -12,14 +12,7 @@ int _forki(char **l_token, char *path)
 
 	pidC = fork();
 	if (pidC < 0)
-	{
-		if (path)
-		{
-			free(path);
-		}
-		free_ptr(l_token);
 		return (-1);
-	}
 
 	if (pidC > 0)
 	{
@@ -30,12 +23,7 @@ int _forki(char **l_token, char *path)
 	else if (pidC == 0)
 	{
 		if (execve(path, l_token, environ) == -1)
-		{
-			if (path)
-				free(path);
-
-			free_ptr(l_token);
-		}
+			return (-1);
 	}
 	return (0);
 }

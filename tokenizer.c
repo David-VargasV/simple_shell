@@ -9,29 +9,25 @@
 
 char **tokenizer(char *line, char *delim)
 {
-	int j = 0, len = t_count(line, delim);
-	char *ltok_1 = NULL;
+	int i = 1, len = 0;
 	char **tokens = NULL;
 
-	ltok_1 = strtok(line, delim);
-	if (ltok_1 == NULL)
-	{
-		return (NULL);
-	}
-
+	len = t_count(line, delim);
 	tokens = malloc(sizeof(char *) * (len + 1));
 	if (tokens == NULL)
+		return (NULL);
+
+	tokens[0] = strtok(line, delim);
+	if (tokens[0] == NULL)
 	{
-		free(ltok_1);
+		free_ptr(tokens);
 		return (NULL);
 	}
 
-	while (j < len)
+	while (i < len)
 	{
-		tokens[j] = ltok_1;
-		j++;
-		ltok_1 = strtok(NULL, delim);
+		tokens[i] = strtok(NULL, delim);
+		i++;
 	}
-	free(ltok_1);
 	return (tokens);
 }

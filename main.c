@@ -18,44 +18,44 @@ void sigintHandler(int sig)
 
 int main(void)
 {
-	int n_char = 0, len_tok = 0;
-	char *line = NULL, *delim = " \n\t", *path = NULL;
-	size_t size = 0;
-	char **l_token = NULL;
+	char *line = NULL;
 
 	signal(SIGINT, sigintHandler);
 	while (1)
 	{
+		char *path = NULL;
+		char **l_token = NULL;
+		ssize_t n_char = 0;
+		size_t size = 0;
+
 		printf("$ ");
 		n_char = getline(&line, &size, stdin);
 		if (n_char == EOF)
 			return (0);
 
-		len_tok = t_count(line, delim);
-		l_token = malloc(sizeof(char *) * (len_tok + 1));
-		l_token = tokenizer(line, delim);
+		l_token = malloc(sizeof(char *) * (t_count(line, " \n\t") + 1));
+		l_token = tokenizer(line, " \n\t");
 		if (l_token == NULL)
-		{	free(line);
-			perror("./hsh");
-		}
+		{	perror("./hsh");
+			free(line);
+			continue; }
 		if (access(l_token[0], F_OK) == -1)
 		{	path = _getenv(l_token[0]);
 			if (path == NULL)
-			{
-				perror("./hsh");
+			{	perror("./hsh");
 				free(path);
 				free_ptr(l_token);
-			}
+				continue; }
 		}
 		else
 			path = _strdup(l_token[0]);
 
 		if (_forki(l_token, path) == -1)
-		{	free(l_token);
+		{	perror("./hsh");
+			free(l_token);
 			free(path);
 			free(line);
-			perror("./hsh");
-		}
-	}
+			continue; }
+		free(line); }
 	return (0);
 }
